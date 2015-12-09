@@ -41,16 +41,7 @@ int numDigitos=0;
                     int limite = (i - 1) / 2; 
                     if  (limite % 2 == 0) limite--;  
              
-                    while(i1 <= limite)
-                    {
-                        if (i % i1 == 0) {
-                            contador1++;
-                        }
-                        i1 += 2;
-                        if (contador1 == 2) {
-                            i1 = limite + 1;
-                        }
-                    }
+                        contador1 = devolver(i1, limite, i, contador1);
  
         if (contador1 == 1) p = true;
             } 
@@ -60,6 +51,20 @@ int numDigitos=0;
                     System.out.println(i);    
             }
         }
+    }
+
+    public static int devolver(int i1, int limite, int i, int contador1) {
+        while(i1 <= limite)
+        {
+            if (i % i1 == 0) {
+                contador1++;
+            }
+            i1 += 2;
+            if (contador1 == 2) {
+                i1 = limite + 1;
+            }
+        }
+        return contador1;
     }
     
 }
