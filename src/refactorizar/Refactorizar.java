@@ -10,10 +10,10 @@ public class Refactorizar {
     
     public static void main(String[] args) {
         boolean p = false;
-int numDigitos=0;
+int numeroDigitos=0;
         int ndigitos=0;
-        numDigitos=4;
-        if(numDigitos<=0)
+        numeroDigitos=4;
+        if(numeroDigitos<=0)
         System.out.println("Ingrese como parámetro, un numero de digitos correcto (mayor que 0): ");
         for(int i = 1; i <= 99999; i++ )
         {
@@ -29,7 +29,7 @@ int numDigitos=0;
         ndigitos=contador;
             
             
-            if(ndigitos==numDigitos){
+            if(ndigitos==numeroDigitos){
                    if (i < 4) p = true;
             else
             {
