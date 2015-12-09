@@ -43,9 +43,13 @@ int numDigitos=0;
              
                     while(i1 <= limite)
                     {
-                        if (i % i1 == 0) contador1++;
-                            i1 += 2;
-                            if (contador1 == 2) i1 = limite + 1;
+                        if (i % i1 == 0) {
+                            contador1++;
+                        }
+                        i1 += 2;
+                        if (contador1 == 2) {
+                            i1 = limite + 1;
+                        }
                     }
  
         if (contador1 == 1) p = true;
