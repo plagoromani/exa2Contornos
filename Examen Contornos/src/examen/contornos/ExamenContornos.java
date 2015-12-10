@@ -5,6 +5,8 @@
  */
 package examen.contornos;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Pablite5
@@ -21,7 +23,7 @@ public class ExamenContornos {
     public static boolean p = false;
 
     public static void main(String arg[]) {
-        int digito = 3;
+        int digito = pedirNumero();
         int numerodigitos = 0;
         if (digito <= 0) {
             System.out.println("Ingrese como parámetro, un numero de digitos correcto (mayor que 0): ");
@@ -31,10 +33,8 @@ public class ExamenContornos {
 
             int contadorx = 0;
 
-            while (aux != 0) {
-                aux = aux / 10;
-                contadorx++;
-            }
+            contadorx = División(aux, contadorx);
+            
             numerodigitos = contadorx;
 
             if (numerodigitos == digito) {
@@ -55,10 +55,7 @@ public class ExamenContornos {
                             if (i % i1 == 0) {
                                 contadorx1++;
                             }
-                            i1 += 2;
-                            if (contadorx1 == 2) {
-                                i1 = k + 1;
-                            }
+                            i1 = Suma(i1, contadorx1, k);
                         }
 
                         if (contadorx1 == 1) {
@@ -74,4 +71,26 @@ public class ExamenContornos {
         }
     }
 
+    public static int Suma(int i1, int contadorx1, int k) {
+        i1 += 2;
+        if (contadorx1 == 2) {
+            i1 = k + 1;
+        }
+        return i1;
+    }
+
+    public static int División(int aux, int contadorx) {
+        while (aux != 0) {
+            aux = aux / 10;
+            contadorx++;
+        }
+        return contadorx;
+    }
+
+
+    public static int pedirNumero(){
+        int numero = Integer.parseInt(JOptionPane.showInputDialog("Introduce numero"));
+        return numero;
+    }
+    
 }
